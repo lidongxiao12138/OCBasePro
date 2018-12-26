@@ -1,0 +1,88 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AXRatingView (1.0.6)
+  - BaiduMapKit (4.1.1)
+  - CRToast (0.0.9)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HexColors (2.2.1)
+  - HHTransition (1.2.0)
+  - IQKeyboardManager (6.1.1)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
+  - SVProgressHUD (2.2.5)
+  - TSMessages (0.9.12):
+    - HexColors (~> 2.2.0)
+  - ViewDeck (3.1.0)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
+  - AXRatingView (= 1.0.6)
+  - BaiduMapKit (= 4.1.1)
+  - CRToast (= 0.0.9)
+  - FMDB (= 2.7.5)
+  - HHTransition (= 1.2.0)
+  - IQKeyboardManager (= 6.1.1)
+  - Masonry (= 1.1.0)
+  - MBProgressHUD (= 1.1.0)
+  - MJExtension (= 3.0.15.1)
+  - MJRefresh (= 3.1.15.7)
+  - SVProgressHUD (= 2.2.5)
+  - TSMessages (= 0.9.12)
+  - ViewDeck (= 3.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AXRatingView
+    - BaiduMapKit
+    - CRToast
+    - FMDB
+    - HexColors
+    - HHTransition
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - SVProgressHUD
+    - TSMessages
+    - ViewDeck
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AXRatingView: b975cd1a11c6c2e76c8999c166e089ed26f54133
+  BaiduMapKit: 51bba432a28316680676b4d453a70e5031f3a7eb
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  HHTransition: 35c278fbe8374cdf0931a805aef066d52256a897
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
+  ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
+
+PODFILE CHECKSUM: d6d6e5c2e54961cd62449b1a5503c91992bde477
+
+COCOAPODS: 1.5.3

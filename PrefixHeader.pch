@@ -1,0 +1,259 @@
+//
+//  PrefixHeader.pch
+//  OCBasePro1
+//
+//  Created by 李东晓 on 2018/12/25.
+//  Copyright © 2018年 李东晓. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "YNBaseViewController.h"
+#import "YNWebViewController.h"
+#import <ViewDeck.h>
+#import "IQKeyboardManager.h"
+#import "UIColor+HexColor.h"
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "SVProgressHUD.h"
+#import "XcwHUD.h"
+#import "XcwGifHUD.h"
+#import "RYUtils.h"
+#import "YYKit.h"
+#import "UIImage+GIFImage.h"
+#import "SVProgressHUD_Extension.h"
+#import "LoginDataModel.h"
+#import "DataManager.h"
+
+
+//jsonKit
+#import "JSONKit.h"
+//文字提示
+#import "LimitTextView.h"
+//滑动评分
+#import <AXRatingView.h>
+//文字识别
+#import <objc/runtime.h>
+#import <AipOcrSdk/AipOcrSdk.h>
+//多条选项框
+#import "SPAlertController.h"
+//弹窗
+#import "LewPopupViewController.h"
+//刷新
+#import <MJRefresh/MJRefresh.h>
+
+#pragma mark --- 更新
+//网络封装更新
+#import "LDXNetworking.h"
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+
+#define kDefaultImage @"kDefaultImage"
+#define LSHCurrenrUser [AccountTool account]
+
+#define BaseURL @"http://webservice.lsh-cat.com:9998/tools/"
+#define KDeletePicByImageName @"lgs_deletePicByImageName.do"//删除单张图片
+#define KdepartAssignNote @"lgs_departAssignNote.do"//发车接口
+
+#define D_width SCREENWIDTH/375
+#define D_height SCREENHEIGHT/667
+//正常地址
+#define k_BASE_URL(url) [NSString stringWithFormat:@"%@%@",BaseURL,url]
+#define k_NSString(str1) [NSString stringWithFormat:@"%@",str1]
+#define k_NSFloat(str1) [NSString stringWithFormat:@"%f",str1]
+
+//Downloader
+#define DOCUMENTS_FOLDER    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/"]
+#define kNetWorkErrorString @"网络错误"
+#define kAllDataLoaded      @"已加载完所有数据"
+#define USHARE_DEMO_APPKEY  @"59f99acf734be411fe00001e"//分享
+
+#define UMessage_DEMO_APPKEY  @"5a177ccab27b0a1aaa000155"//推送
+
+//App Constant Values
+#define kLoginUserDataFile                  @"LoginUserDataFile"
+#define kLoginInDataFile @"LoginInDataFile"
+
+#define D_width SCREENWIDTH/375
+#define D_height SCREENHEIGHT/667
+//正常地址
+#define k_BASE_URL(url) [NSString stringWithFormat:@"%@%@",BaseURL,url]
+#define k_BASE_ImgURL(url) [NSString stringWithFormat:@"%@%@",HeadURL,url]
+
+
+
+
+
+#define versionStr [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+
+//各种系统版本
+#define IOS11Later (@available(iOS 11, *))
+#define IOS10Later (@available(iOS 10, *))
+#define IOS9Later (@available(iOS 9, *))
+
+//取消自动缩进
+#define CancelAutoInset(scrollview) if (@available(iOS 11.0, *)) {\
+scrollview.contentInsetAdjustmentBehavior = UIApplicationBackgroundFetchIntervalNever;\
+} else {\
+self.automaticallyAdjustsScrollViewInsets = false;\
+}
+
+//字体
+#define Thin(num) [UIFont systemFontOfSize:num weight:UIFontWeightThin]
+#define Light(num) [UIFont systemFontOfSize:num weight:UIFontWeightLight]
+#define Regular(num) [UIFont systemFontOfSize:num weight:UIFontWeightRegular]
+#define Sbold(num) [UIFont systemFontOfSize:num weight:UIFontWeightSemibold]
+#define Bold(num) [UIFont systemFontOfSize:num weight:UIFontWeightBold]
+
+//从设置文件里读取当前版本号
+#define AppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
+
+//优化NSLog
+#ifdef DEBUG
+#define NSLog(format,...) printf("%s\n",[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String])
+#else
+#define NSLog(...)
+#endif
+
+#define WeakObj(o) @autoreleasepool{} __weak typeof(o) o##Weak = o;
+
+// View 圆角和加边框
+#define ViewBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+
+// View 圆角
+#define ViewRadius(View, Radius)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES]
+
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r,g,b,a)                  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define kGlobalBg RGB(240, 240, 240)
+
+#define kGlobalTintColor RGBColor(28, 26, 35 ,1)
+
+#define kBGBaseColor RGB(0, 155, 248)
+
+#define kNewFile RGB(0, 185, 55)
+
+#define kGrayTitle RGB(111, 113, 121)
+
+#define kOrangeColor RGB(255, 183, 51)
+
+#define kRedColor RGB(241, 90, 90)
+
+#define kBlueColor RGB(39, 140, 204)
+
+#define WHITE [UIColor whiteColor]
+
+#define KNavigationBgColor RGB(37, 204, 90)
+
+#define KTitLableColor RGB(101, 101, 101)
+
+#define BaseLDXColor       [UIColor colorWithRed:245.0f/255.0 green:245.0f/255.0 blue:245.0f/255.0 alpha:1.0f]
+#define ButLDXColor        [UIColor colorWithRed:138.0f/255.0 green:204.0f/255.0 blue:240.0f/255.0 alpha:1.0f]
+
+//3秒消失 -success
+#define SVProgressShowSuccessWithInfo(s) {[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom]; [SVProgressHUD setBackgroundColor:BarTintColor];[SVProgressHUD setForegroundColor:WHITE];[SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@",s]];}
+
+
+//3秒消失 - info
+#define SVProgressShowInfoWithStatus(s) {[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom]; [SVProgressHUD setBackgroundColor:BarTintColor];[SVProgressHUD setForegroundColor:WHITE];[SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@",s]];}
+
+//不消失 - info
+#define SVProgressShowInfo(s) {[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];[SVProgressHUD setBackgroundColor:BarTintColor];[SVProgressHUD setForegroundColor:[UIColor whiteColor]];[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];[SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];[SVProgressHUD showWithStatus:[NSString stringWithFormat:@"%@",s]];}
+
+#define pushNavi(navi)   [self.navigationController pushViewController:navi animated:YES];
+#define ifNavi(navi) ![self.navigationController.topViewController isKindOfClass:[navi class]]
+
+#define popNaiv   [self.navigationController popViewControllerAnimated:YES];
+
+#define BarTintColor  [UIColor colorWithHexString:@"373b3e"]
+
+#define localImg(img) [UIImage imageNamed:img]
+
+
+#define IsNilOrNull(_ref) (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+#define popNaiv   [self.navigationController popViewControllerAnimated:YES];
+#define pushNavi(navi)   [self.navigationController pushViewController:navi animated:YES];
+#define ifNavi(navi) ![self.navigationController.topViewController isKindOfClass:[navi class]]
+#define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT  [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH  SCREENWIDTH
+#define SCREEN_HEIGHT  SCREENHEIGHT
+#define SC
+#define localImg(img) [UIImage imageNamed:img]
+#define RGBColor(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1]
+#define BackyellowColor RGBColor(255,175,0)
+#define KBaseGreyColor RGBColor(145,145,145)
+#define KBase240GreyColor RGBColor(240,240,240)
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define kGrayTitle RGB(111, 113, 121)
+
+#define KOrgerColor RGBColor(255,119,31)
+
+#define winWidth [[UIScreen mainScreen] bounds].size.width
+#define winHeight [[UIScreen mainScreen] bounds].size.height
+#define statusHeight (winHeight == 812.0 ? 44 : 20)
+#define naviHeight (winHeight == 812.0 ? 88 : 64)
+#define tabBarHeight (winHeight == 812.0 ? 83.0f : 49.0f)
+#define safeBotHeight (winHeight == 812.0 ? 20 : 0)
+#define marginSpace 10
+
+#define MAINCOLOR  BackyellowColor
+#define BackredColor  RED
+#define BarTintColor  [UIColor colorWithHexString:@"373b3e"]
+#define StatusBarColor [UIColor colorWithHexString:@"2e2e2e"]
+#define FontDark [UIColor colorWithHexString:@"#3e3e3e"]
+#define FontGray [UIColor colorWithHexString:@"#838383"]
+#define LIGHTBLACK [[UIColor blackColor] colorWithAlphaComponent:0.7]
+#define BezierOrange [UIColor colorWithHexString:@"#f8a20f"]
+#define BezierGreen [UIColor colorWithHexString:@"#32d2c9"]
+#define BLUE [UIColor colorWithHexString:@"#1296db"]
+#define WHITE [UIColor whiteColor]
+#define GREEN [UIColor colorWithHexString:@"#02b300"]
+#define CRYSTALDARK [UIColor colorWithHexString:@"#24292f"]
+#define LIGHTGRAY [UIColor colorWithHexString:@"#f2f2f2"]
+#define GRAY [UIColor colorWithHexString:@"#c2c2c2"]
+#define RED [UIColor colorWithHexString:@"#c70100"]
+#define GREEN [UIColor colorWithHexString:@"#02b300"]
+#define HiraginoMidFONT PingFangTitleFont
+
+
+/**
+ *  判断是否空
+ */
+static inline BOOL IsEmpty(id thing) {
+    return thing == nil || [thing isEqual:[NSNull null]]
+    || ([thing respondsToSelector:@selector(length)]
+        && [(NSData *)thing length] == 0)
+    || ([thing respondsToSelector:@selector(count)]
+        && [(NSArray *)thing count] == 0);
+}
+
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
